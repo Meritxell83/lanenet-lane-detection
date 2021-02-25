@@ -134,14 +134,14 @@ def test_lanenet(image_path, weights_path):
         embedding_image = np.array(instance_seg_image[0], np.uint8)
 
         plt.figure('mask_image')
-        plt.imshow(mask_image[:, :, (2, 1, 0)])
+        plt.imsave('Instance_Segmentation.png',mask_image[:, :, (2, 1, 0)])
         plt.figure('src_image')
-        plt.imshow(image_vis[:, :, (2, 1, 0)])
+        plt.imsave('Test_Lane_Mask_Image.png',image_vis[:, :, (2, 1, 0)])
         plt.figure('instance_image')
-        plt.imshow(embedding_image[:, :, (2, 1, 0)])
+        plt.imsave('Pixel_embbedings.png',embedding_image[:, :, (2, 1, 0)])
         plt.figure('binary_image')
-        plt.imshow(binary_seg_image[0] * 255, cmap='gray')
-        plt.show()
+        plt.imsave('Binary_Lane_Segmentation_Image.png',binary_seg_image[0] * 255, cmap='gray')
+        
 
     sess.close()
 
