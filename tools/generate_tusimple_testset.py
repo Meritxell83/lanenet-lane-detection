@@ -139,13 +139,13 @@ def process_tusimple_dataset(src_dir):
     traing_folder_path = ops.join(src_dir, 'training')
     testing_folder_path = ops.join(src_dir, 'testing')
 
-    os.makedirs(traing_folder_path, exist_ok=True)
+    #os.makedirs(traing_folder_path, exist_ok=True)
     os.makedirs(testing_folder_path, exist_ok=True)
 
     for json_label_path in glob.glob('{:s}/label*.json'.format(src_dir)):
         json_label_name = ops.split(json_label_path)[1]
 
-        shutil.copyfile(json_label_path, ops.join(traing_folder_path, json_label_name))
+        shutil.copyfile(json_label_path, ops.join(testing_folder_path, json_label_name))
 
     for json_label_path in glob.glob('{:s}/test*.json'.format(src_dir)):
         json_label_name = ops.split(json_label_path)[1]
